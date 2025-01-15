@@ -1,0 +1,74 @@
+[
+    {
+        "number": 1,
+        "size": 2,
+        "price": 300,
+        "type": "Business"
+    },
+    {
+        "number": 2,
+        "size": 4,
+        "price": 500,
+        "type": "Family"
+    },
+    {
+        "number": 3,
+        "size": 1,
+        "price": 150,
+        "type": "Single"
+    },
+    {
+        "number": 4,
+        "size": 3,
+        "price": 400,
+        "type": "Deluxe"
+    },
+    {
+        "number": 5,
+        "size": 2,
+        "price": 250,
+        "type": "Standard"
+    },
+    {
+        "number": 6,
+        "size": 1,
+        "price": 180,
+        "type": "Budget"
+    },
+    {
+        "number": 7,
+        "size": 4,
+        "price": 600,
+        "type": "Suite"
+    },
+    {
+        "number": 8,
+        "size": 3,
+        "price": 350,
+        "type": "Business"
+    },
+    {
+        "number": 9,
+        "size": 2,
+        "price": 280,
+        "type": "Standard"
+    },
+    {
+        "number": 10,
+        "size": 1,
+        "price": 120,
+        "type": "Single"
+    },
+    {
+        "number": 11,
+        "size": 3,
+        "price": 450,
+        "type": "Deluxe"
+    },
+    {
+        "number": 12,
+        "size": 4,
+        "price": 550,
+        "type": "Family"
+    }
+]

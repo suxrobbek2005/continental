@@ -1,11 +1,6 @@
 from models.user import User
 
 def register() -> User:
-    name = input("name: ")
-    name = input("name: ")
-    name = input("name: ")
-    name = input("name: ")
-
     pass
 
 def login(users: list[User]) -> User:

@@ -1,8 +1,8 @@
 from models.user import User
 
-def is_user(users: list[User]) -> bool:
+def is_user(users: list[User], username: str) -> bool:
     for user in users:
-        if user.username:
+        if user.username == username:
             return True
     
     return False
@@ -50,7 +50,7 @@ def login(users: list[User]) -> User:
     username = input("username: ")
     password = input("password: ")
 
-    if is_user(username) and check_password(password):
+    if is_user(users, username) and check_password(password):
         for user in users:
             if user.username == username and user.password == password:
                 return user

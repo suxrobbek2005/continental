@@ -4,4 +4,3 @@ class User:
         self.age = age
         self.usurnaem = username
         self.password = password
-    

@@ -23,7 +23,7 @@ def check_password(password: str) -> bool:
     return all([u, l, d, p])
 
 
-def register() -> User:
+def register(users: list[User]) -> User:
     name = input("name: ")
     while not name.isalpha():
         print("invalid name")
@@ -35,7 +35,7 @@ def register() -> User:
         age = input("age: ")
 
     username = input("username: ")
-    while is_user(username):
+    while is_user(users, username):
         print("invalid username")
         username = input("username: ")
 
@@ -46,7 +46,7 @@ def register() -> User:
 
     return User(name, age, username, password)
 
-def login(users: list[User]) -> User:
+def login(users: list[User]) -> User | None:
     username = input("username: ")
     password = input("password: ")
 
@@ -57,9 +57,7 @@ def login(users: list[User]) -> User:
         
     return None
 
-def logout(user: User, session: list[User]) -> bool:
-    if user in session:
-        session.remove(user)
-        return True
+def logout(user: User, session: list[User]) -> list[User] | None:
+    session.remove(user)
+    return session
     
-    return False

@@ -4,7 +4,6 @@ def is_user(users: list[User], username: str) -> bool:
     for user in users:
         if user.username == username:
             return True
-    
     return False
 
 def check_password(password: str) -> bool:
@@ -24,40 +23,45 @@ def check_password(password: str) -> bool:
 
 
 def register(users: list[User]) -> User:
-    name = input("name: ")
+    name = input("Ismni kiriting: ")
     while not name.isalpha():
-        print("invalid name")
-        name = input("name: ")
+        print("xato name kiritdingiz!\n")
+        name = input("Ismni kiriting: ")
 
-    age = input("age: ")
+    age = input("Yoshingizni kiriting: ")
     while not age.isdigit() or int(age) < 18:
-        print("invalid age")
-        age = input("age: ")
+        print("xato ma`lumot kiritdingiz!\n")
+        age = input("Yoshingizni kiriting: ")
 
-    username = input("username: ")
+    username = input("username ni kiriting: ")
     while is_user(users, username):
-        print("invalid username")
-        username = input("username: ")
+        print("Bunday foydalanuvchi ruyxatdan o`tgan!\n")
+        username = input("username ni kiriting: ")
 
-    password = input("password: ")
+    password = input("password ni kiriting: ")
     while not check_password(password):
-        print("invalid password")
-        password = input("password: ")
+        print("Kuchsiz parol kiritdingiz, iltimos qaytadan kiriting!\n")
+        password = input("password ni kiriting: ")
 
+    print("Siz muvaffaqiyatli ruyxatdan o`tdingiz! \n")
     return User(name, age, username, password)
+# Login function orqali bar
+def login(users: list[User]) -> User:
+    # bazada bor bo`lgan userni topmaguncha aylanadi
+    while True:
+        username = input("username ni kiriting: ")
+        password = input("password ni kiriting: ")
 
-def login(users: list[User]) -> User | None:
-    username = input("username: ")
-    password = input("password: ")
 
-    if is_user(users, username) and check_password(password):
-        for user in users:
-            if user.username == username and user.password == password:
-                return user
-        
-    return None
+        if is_user(users, username) and check_password(password):
+            for user in users:
+                if user.username == username and user.password == password:
+                    return user
+        return None
 
-def logout(user: User, session: list[User]) -> list[User] | None:
-    session.remove(user)
-    return session
+def logout(user: User, session: list[User]) -> bool:
+    if user in session:
+        session.remove(user)
+        return True
     
+    return False

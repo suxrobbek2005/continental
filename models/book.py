@@ -5,4 +5,3 @@ class Book:
     def __init__(self, user: User, room: Room):
         self.user = user
         self.room = room
-    

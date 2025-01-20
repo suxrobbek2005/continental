@@ -5,5 +5,3 @@ class Room:
         self.size = size
         self.price = price
         self.type = type
-
-    
